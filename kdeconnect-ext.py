@@ -10,7 +10,7 @@ Nautilus = importlib.import_module("gi.repository.{}".format(TARGET))
 
 class KDEConnectExtension(GObject.GObject, Nautilus.MenuProvider):
     def __init__(self):
-        pass
+        GObject.Object.__init__(self)
 
     def zipdir(self, path, ziph):
         # ziph is zipfile handle
@@ -31,8 +31,8 @@ class KDEConnectExtension(GObject.GObject, Nautilus.MenuProvider):
             files.append(zipfile)
 
         send_files(files, device_id, device_name)
-        # for folder_name in folder_list:
-        #     os.remove(folder_name[7:] + '.zip')
+        for folder_name in folder_list:
+             os.remove(folder_name[7:] + '.zip')
 
     def get_file_items(self, window, files):
         try:
@@ -49,8 +49,8 @@ class KDEConnectExtension(GObject.GObject, Nautilus.MenuProvider):
                 folder_list.append(files[i].get_uri())
 
         files = files_new
-        print files
-        print folder_list
+        print(files)
+        print(folder_list)
 
         if (len(files_new) + len(folder_list) < 1):
             return []
