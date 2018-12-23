@@ -2,16 +2,8 @@ from subprocess import check_output, call
 import re
 
 def send_files(files, device_id, device_name):
-    # results=[]
-    # failed=0
     for file in files:
-        print("filename", file.get_uri())
         return_code=call(["kdeconnect-cli", "-d", device_id, "--share", file.get_uri()])
-        # if (return_code != 0):
-        #     failed += 1
-        # results.append(return_code)
-    call(["notify-send", "Sending {num_files} file(s) to {device_name}. Check your device.".format(num_files=len(files), device_name=device_name)])
-    # return results
 
 def get_available_devices():
     devices_a=[]
