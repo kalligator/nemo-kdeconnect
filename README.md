@@ -26,4 +26,4 @@ Installation
 
 4. Clone this repository and install the extension with the `Nemo` target.
 
-git clone https://github.com/kelebek333/nemo-kdeconnect && make -C nemo-kdeconnect install TARGET=Nemo
+`git clone https://github.com/kelebek333/nemo-kdeconnect && make -C nemo-kdeconnect install TARGET=Nemo`
