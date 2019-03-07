@@ -4,7 +4,7 @@ from gi.repository import GObject
 from kdeconnect import send_files, get_available_devices
 import zipfile
 import urllib
-import urlparse
+import urllib.parse as urlparse
 
 TARGET = "%%TARGET%%".title()
 Nautilus = importlib.import_module("gi.repository.{}".format(TARGET))
